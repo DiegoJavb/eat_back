@@ -11,6 +11,10 @@ const app = express();
 // Middleware
 app.use(cors());
 app.use(express.json());
+// Ruta raíz para verificación
+app.get('/', (req, res) => {
+  res.json({ message: 'API de Eat_Back está funcionando' });
+});
 
 // Rutas de autenticación
 app.post('/api/register', async (req, res) => {
